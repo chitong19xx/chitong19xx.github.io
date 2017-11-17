@@ -1,0 +1,76 @@
+---
+layout: post
+title:  "Subcubic Algorithms"
+date:   2017-11-15 21:31:39 -0500
+categories: jekyll update
+---
+
+## Hardness of Easy Problems
+
+<h2>"Hardness of Easy Problems"</h2>
+<h4>A not-so-easy puzzle waiting to be solved</h4>
+I started exploring the subject by reading this survey paper: Hardness of Easy Problems: Basing Hardness on Popular Conjectures such as the Strong Exponential Time Hypothesis (Virginia V. Williams)
+
+http://theory.stanford.edu/~virgi/ipec-survey.pdf
+
+We've seen extensive discussion on P vs NP question (See https://www.win.tue.nl/~gwoegi/P-versus-NP.htm for a list of papers that claimed to have solved the problem, but mostly haven't), but Williams' paper shifts attention to a class of problems that are known to be solved within $latex O(n^2)$ or $latex O(n^3)$, but no sub-quadratic or sub-cubic algorithms are known. These problems are important because of one of the following reasons:
+
+i) They are "reducible" to many other problems, so solving them faster means that we can solve many other problems faster
+
+ii) They are "reducible" to an NP problem, so a subcubic algorithm leads to a sub-exponential algorithm in solving SAT (or other NP problem).
+
+The notion of "reducible" in the above two statements is different from the usual NP-reducible sense.
+
+Recall the usual definition of reducible we use in NP:
+Define $latex X \leq_p Y$. ``$latex X$ is poly-time reducible to $latex Y$'' (up to polynomial factors, $latex X$ takes less time than $latex Y$). That is, there is a polynomial time algorithm that solves $latex X$ given the ability to obtain answers to $latex Y$ in unit time.
+
+What about "reducible"? Now we need to learn the notion of a "tight reduction", or "fine-grained reduction", as clarified by Williams in her survey paper above:
+
+<a href="https://campuspress.yale.edu/hienchitong/files/2016/08/Fine-Grained-Reduction-Williams-qihw5o.png" rel="attachment wp-att-413"><img class="aligncenter size-medium wp-image-413" src="https://campuspress.yale.edu/hienchitong/files/2016/08/Fine-Grained-Reduction-Williams-qihw5o-300x185.png" alt="Fine-Grained Reduction (Williams)" width="300" height="185" /></a>
+
+In i) We have the function $latex a(n), b(n)$ as defined in William's definition to be $latex n^2, n^2$ but in ii) we have $latex 2^n, n^2$ to draw a connection in running time between P and NP problem.
+
+The paper offers a comprehensive relations among some famous problems (Orthogonal Vectors (OV), All-Pairs Shortest Path (APSP), Hitting Set (HS), k-SAT) and some examples of the reductions involved.
+
+One important reduction presented in the paper was $latex kSAT \leq_{2^n, n^2}$ OV. This proof uses an important lemma: Sparsification lemma, which aims to reduce the number of clauses to be $latex O(n)$ where n is the number of variables in a SAT instance. A longer but more digestible presentation of the sparsification lemma can be found here: http://users-cs.au.dk/dscheder/SAT2012/sparsification.pdf
+
+This reduction makes the OV worth exploring because the Strong Exponential Time Hypothesis (SETH):
+Conjecture: SETH:
+"For every $latex \epsilon$ &gt; 0, there exists an integer k, such that Satisfiability on k-CNF formulas on n variables cannot be solved in $latex O(2^ {(1 - \epsilon) n } poly(n)) $ time in expectation".
+(also, for more details: http://fptschool.mimuw.edu.pl/slides/lec20.pdf)
+In terms of OV problem: If the OV problem can be solved in $latex O(n^ {2 - \epsilon } poly(n)) $, then SETH is false. For a proof sketch of this, visit Ryan Williams' lecture note at http://www.imsc.res.in/~vraman/exact/ryan.pdf
+
+(Digression: Have you wondered why these two researchers share the same last name? I did; so I googled them and found out that they wrote a joint paper while visiting the same university, and now they're married and both are working at Stanford. What a love story!)
+
+I spent a lot of time developing a less-brute-force algorithm for OV, which I will elaborate in another entry.
+
+So, ready to delve into some more research papers?
+
+1)Subcubic Equivalences Between Path, Matrix, and Triangle Problems (Virginia Vassilevska Williams, Ryan Williams) : http://web.stanford.edu/~rrwill/tria-mmult.pdf
+
+This paper demonstrates the technique of using the oracle to answer a decision problem to recover a listing problem (yes/no negative triangle to listing up to $latex O(n^{3 - \epsilon})$ negative triangles. Another two notable problems in this paper is the minimum weight problem and the matrix multiplication in the (min,+) semiring.
+
+2) Subcubic Equivalences Between Graph Centrality Problems, APSP and Diameter (Amir Abboud, Fabrizio Grandoni, Virginia Vassilevska Williams)
+
+This paper also demonstrates the reduction technique between graph problems. I tried imitating the technique to draw an arrow that they couldn't draw in this paper, and failed. It seems like I haven't reached a new insight to reduce diameter problem to any of the problems in the Radius/Betweeness Centrality/Negative Triangle group.
+
+3) Negative-Weight Shortest Paths and Unit Capacity Minimum Cost Flow in $latex O(m^{10/7} log W ) $ Time (Michael B. Cohen, Aleksander Mądry, Piotr Sankowski, Adrian Vladu)
+
+Latest result (and fastest so far) on negative-weight shortest paths problem.
+
+4) Fast Approximation Algorithms for the Diameter and Radius of Sparse Graphs (Liam Roditty &amp; Virginia Vassilevska Williams)
+
+
+
+## Complexity theory
+
+Useful lecture notes:
+<ol>
+ 	<li>Advanced Complexity Theory, by Prof Dan Spielman: http://www.cs.yale.edu/homes/spielman/AdvComplexity/</li>
+ 	<li>CS710- Complexity Theory, by Prof Dieter van Melkebeek</li>
+</ol>
+http://pages.cs.wisc.edu/~dieter/Courses/2010s-CS710 (and list of notes: http://pages.cs.wisc.edu/~dieter/Courses/2010s-CS710/Scribes/PDF )
+
+<!--[jekyll-docs]: https://jekyllrb.com/docs/home
+[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-talk]: https://talk.jekyllrb.com/-->

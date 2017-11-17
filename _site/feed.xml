@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-11-15T22:12:08-05:00</updated><id>http://localhost:4000/</id><title type="html">Chi’s Math Corner</title><subtitle>My personal collection of interesting math ideas</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2017/11/15/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2017-11-15T21:31:39-05:00</published><updated>2017-11-15T21:31:39-05:00</updated><id>http://localhost:4000/jekyll/update/2017/11/15/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2017/11/15/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry><entry><title type="html">Subcubic Algorithms</title><link href="http://localhost:4000/jekyll/update/2017/11/15/subcubic.html" rel="alternate" type="text/html" title="Subcubic Algorithms" /><published>2017-11-15T21:31:39-05:00</published><updated>2017-11-15T21:31:39-05:00</updated><id>http://localhost:4000/jekyll/update/2017/11/15/subcubic</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2017/11/15/subcubic.html">&lt;h2 id=&quot;hardness-of-easy-problems&quot;&gt;Hardness of Easy Problems&lt;/h2&gt;
+
+&lt;h2&gt;&quot;Hardness of Easy Problems&quot;&lt;/h2&gt;
+&lt;h4&gt;A not-so-easy puzzle waiting to be solved&lt;/h4&gt;
+&lt;p&gt;I started exploring the subject by reading this survey paper: Hardness of Easy Problems: Basing Hardness on Popular Conjectures such as the Strong Exponential Time Hypothesis (Virginia V. Williams)&lt;/p&gt;
+
+&lt;p&gt;http://theory.stanford.edu/~virgi/ipec-survey.pdf&lt;/p&gt;
+
+&lt;p&gt;We’ve seen extensive discussion on P vs NP question (See https://www.win.tue.nl/~gwoegi/P-versus-NP.htm for a list of papers that claimed to have solved the problem, but mostly haven’t), but Williams’ paper shifts attention to a class of problems that are known to be solved within $latex O(n^2)$ or $latex O(n^3)$, but no sub-quadratic or sub-cubic algorithms are known. These problems are important because of one of the following reasons:&lt;/p&gt;
+
+&lt;p&gt;i) They are “reducible” to many other problems, so solving them faster means that we can solve many other problems faster&lt;/p&gt;
+
+&lt;p&gt;ii) They are “reducible” to an NP problem, so a subcubic algorithm leads to a sub-exponential algorithm in solving SAT (or other NP problem).&lt;/p&gt;
+
+&lt;p&gt;The notion of “reducible” in the above two statements is different from the usual NP-reducible sense.&lt;/p&gt;
+
+&lt;p&gt;Recall the usual definition of reducible we use in NP:
+Define $latex X \leq_p Y$. ``$latex X$ is poly-time reducible to $latex Y$’’ (up to polynomial factors, $latex X$ takes less time than $latex Y$). That is, there is a polynomial time algorithm that solves $latex X$ given the ability to obtain answers to $latex Y$ in unit time.&lt;/p&gt;
+
+&lt;p&gt;What about “reducible”? Now we need to learn the notion of a “tight reduction”, or “fine-grained reduction”, as clarified by Williams in her survey paper above:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://campuspress.yale.edu/hienchitong/files/2016/08/Fine-Grained-Reduction-Williams-qihw5o.png&quot; rel=&quot;attachment wp-att-413&quot;&gt;&lt;img class=&quot;aligncenter size-medium wp-image-413&quot; src=&quot;https://campuspress.yale.edu/hienchitong/files/2016/08/Fine-Grained-Reduction-Williams-qihw5o-300x185.png&quot; alt=&quot;Fine-Grained Reduction (Williams)&quot; width=&quot;300&quot; height=&quot;185&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;In i) We have the function $latex a(n), b(n)$ as defined in William’s definition to be $latex n^2, n^2$ but in ii) we have $latex 2^n, n^2$ to draw a connection in running time between P and NP problem.&lt;/p&gt;
+
+&lt;p&gt;The paper offers a comprehensive relations among some famous problems (Orthogonal Vectors (OV), All-Pairs Shortest Path (APSP), Hitting Set (HS), k-SAT) and some examples of the reductions involved.&lt;/p&gt;
+
+&lt;p&gt;One important reduction presented in the paper was $latex kSAT \leq_{2^n, n^2}$ OV. This proof uses an important lemma: Sparsification lemma, which aims to reduce the number of clauses to be $latex O(n)$ where n is the number of variables in a SAT instance. A longer but more digestible presentation of the sparsification lemma can be found here: http://users-cs.au.dk/dscheder/SAT2012/sparsification.pdf&lt;/p&gt;
+
+&lt;p&gt;This reduction makes the OV worth exploring because the Strong Exponential Time Hypothesis (SETH):
+Conjecture: SETH:
+“For every $latex \epsilon$ &amp;gt; 0, there exists an integer k, such that Satisfiability on k-CNF formulas on n variables cannot be solved in $latex O(2^ {(1 - \epsilon) n } poly(n)) $ time in expectation”.
+(also, for more details: http://fptschool.mimuw.edu.pl/slides/lec20.pdf)
+In terms of OV problem: If the OV problem can be solved in $latex O(n^ {2 - \epsilon } poly(n)) $, then SETH is false. For a proof sketch of this, visit Ryan Williams’ lecture note at http://www.imsc.res.in/~vraman/exact/ryan.pdf&lt;/p&gt;
+
+&lt;p&gt;(Digression: Have you wondered why these two researchers share the same last name? I did; so I googled them and found out that they wrote a joint paper while visiting the same university, and now they’re married and both are working at Stanford. What a love story!)&lt;/p&gt;
+
+&lt;p&gt;I spent a lot of time developing a less-brute-force algorithm for OV, which I will elaborate in another entry.&lt;/p&gt;
+
+&lt;p&gt;So, ready to delve into some more research papers?&lt;/p&gt;
+
+&lt;p&gt;1)Subcubic Equivalences Between Path, Matrix, and Triangle Problems (Virginia Vassilevska Williams, Ryan Williams) : http://web.stanford.edu/~rrwill/tria-mmult.pdf&lt;/p&gt;
+
+&lt;p&gt;This paper demonstrates the technique of using the oracle to answer a decision problem to recover a listing problem (yes/no negative triangle to listing up to $latex O(n^{3 - \epsilon})$ negative triangles. Another two notable problems in this paper is the minimum weight problem and the matrix multiplication in the (min,+) semiring.&lt;/p&gt;
+
+&lt;p&gt;2) Subcubic Equivalences Between Graph Centrality Problems, APSP and Diameter (Amir Abboud, Fabrizio Grandoni, Virginia Vassilevska Williams)&lt;/p&gt;
+
+&lt;p&gt;This paper also demonstrates the reduction technique between graph problems. I tried imitating the technique to draw an arrow that they couldn’t draw in this paper, and failed. It seems like I haven’t reached a new insight to reduce diameter problem to any of the problems in the Radius/Betweeness Centrality/Negative Triangle group.&lt;/p&gt;
+
+&lt;p&gt;3) Negative-Weight Shortest Paths and Unit Capacity Minimum Cost Flow in $latex O(m^{10/7} log W ) $ Time (Michael B. Cohen, Aleksander Mądry, Piotr Sankowski, Adrian Vladu)&lt;/p&gt;
+
+&lt;p&gt;Latest result (and fastest so far) on negative-weight shortest paths problem.&lt;/p&gt;
+
+&lt;p&gt;4) Fast Approximation Algorithms for the Diameter and Radius of Sparse Graphs (Liam Roditty &amp;amp; Virginia Vassilevska Williams)&lt;/p&gt;
+
+&lt;h2 id=&quot;complexity-theory&quot;&gt;Complexity theory&lt;/h2&gt;
+
+&lt;p&gt;Useful lecture notes:&lt;/p&gt;
+&lt;ol&gt;
+ 	&lt;li&gt;Advanced Complexity Theory, by Prof Dan Spielman: http://www.cs.yale.edu/homes/spielman/AdvComplexity/&lt;/li&gt;
+ 	&lt;li&gt;CS710- Complexity Theory, by Prof Dieter van Melkebeek&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;http://pages.cs.wisc.edu/~dieter/Courses/2010s-CS710 (and list of notes: http://pages.cs.wisc.edu/~dieter/Courses/2010s-CS710/Scribes/PDF )&lt;/p&gt;
+
+&lt;!--[jekyll-docs]: https://jekyllrb.com/docs/home
+[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-talk]: https://talk.jekyllrb.com/--&gt;</content><author><name></name></author><summary type="html">Hardness of Easy Problems</summary></entry></feed>
